@@ -20,8 +20,12 @@ const RoomItem = ({ room }) => {
             <div className="d-flex align-items-center text-black-70">
                 {lastMessage ?
                     <>
-                        <div>
-                            <ProfileAvatar src={lastMessage.author.avatar}/>
+                        <div className="d-flex align-items-center">
+                            <ProfileAvatar src={lastMessage.author.avatar} name={lastMessage.author.name} size="sm" />
+                        </div>
+                        <div className="text-disappear ml-2">
+                            <div className="italic">{lastMessage.author.name}</div>
+                            <span>{lastMessage.text}</span>
                         </div>
                     </>
                     : <span>No messages yet ...</span>}
